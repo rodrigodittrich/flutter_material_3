@@ -25,24 +25,26 @@ class _NavigationBarPageState extends State<NavigationBarPage> {
           });
         },
         selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person),
-            label: 'Customers',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.bookmark),
-            icon: Icon(Icons.more_horiz),
-            label: 'More',
-          ),
-        ],
+        destinations: items
       ),
       body: Pages.items
       [currentPageIndex],
     );
   }
+
+  List<Widget> items = [
+    NavigationDestination(
+      icon: Icon(Icons.home),
+      label: 'Home',
+    ),
+    NavigationDestination(
+      icon: Icon(Icons.person),
+      label: 'Customers',
+    ),
+    NavigationDestination(
+      selectedIcon: Icon(Icons.bookmark),
+      icon: Icon(Icons.more_horiz),
+      label: 'More',
+    ),
+  ];
 }
